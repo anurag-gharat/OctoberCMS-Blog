@@ -1,0 +1,112 @@
+/* .active{
+    color: #15e61f !important;
+} */
+nav{
+    background-color: white !important;
+    border-bottom: none !important;
+}
+nav ul li a{
+    color:#15e61f !important;
+}
+.footer{
+    margin-top: 50px;
+    padding-bottom: 0px;
+}
+.footertop{
+    background-color:#616C6F;
+    text-align: center;
+    padding: 40px;
+    width: 100%;
+    height: auto;
+}
+.fa{
+    height: 40px;
+    width: 40px;
+    /* background-image: linear-gradient(45deg,#45CE30,#53E0BC); */
+    background-color: #fff;
+    text-align: center;
+    color:black;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+.fa-facebook:hover{
+    background-image: linear-gradient(45deg,#6a89cc,#1e3799);
+    color: white;
+    text-decoration: none;
+}
+.fa-twitter:hover{
+    background-image: linear-gradient(45deg,#6a89cc,#3498DB);
+    color: white;
+    text-decoration: none;
+}
+.fa-linkedin:hover{
+    background-image: linear-gradient(45deg,#0077b5,#00a0dc);
+    color: white;
+    text-decoration: none;
+}
+.fa-instagram:hover{
+    background-image: linear-gradient(45deg,#515bd4,#8134af,#dd2a74,#feda77);
+    color: white;
+    text-decoration: none;
+}
+.fa-youtube:hover{
+    background-image: linear-gradient(45deg,#e74c3c,#c0392b);
+    color: white;
+    text-decoration: none;
+}
+.footerbottom{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background-image: linear-gradient(45deg,#45CE30,#53E0BC);
+    padding: 10px;       
+}
+.footerbottom h4{
+    color: white;
+}
+.footerbottom h6{
+    color: black;
+    
+}
+.footerpages{
+    width: 100%;
+    height: auto;
+    padding-top: 20px ;
+}
+.footerpages a{
+    color: white;
+    text-decoration: none;
+}
+.footerpages a:hover{
+    color:#15e61f;
+    text-decoration: none;
+}
+.footerpages a:nth-last-child(1){
+    margin-right: 0px;
+    padding: 10px;
+    border-right: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+.footerpages a{
+    margin-right: 10px;
+    border-right:1px solid white ;
+    padding-right: 10px;
+}
+.card{
+    height: auto;
+    width: auto;
+    border-bottom: 1px solid #15e61f;
+    background-color: white;
+    padding:20px;
+    margin-bottom: 20px;
+}
+.category-list{
+    font-size: 24px;  
+}
+.category-list a{
+    text-decoration: none; 
+    color: #15e61f;
+}

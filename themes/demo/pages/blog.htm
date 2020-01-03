@@ -1,0 +1,29 @@
+title = "Blog"
+url = "/blog"
+layout = "default"
+description = "the area where you will see my blog posts"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/category"
+==
+<div class="container-fluid">
+
+   <div class="col-sm-8">
+     {% component 'blogPosts' %}
+   </div>
+   <div class="col-sm-4">
+     {% component 'blogCategories' %}
+   </div> 
+</div>

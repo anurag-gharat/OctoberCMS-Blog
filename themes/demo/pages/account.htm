@@ -1,0 +1,14 @@
+title = "Account"
+url = "/account"
+layout = "default"
+description = "Sign in if you already have and account or Register to participate in Forums and reply to our blogs."
+is_hidden = 0
+
+[account]
+paramCode = "code"
+forceSecure = 0
+
+[session]
+security = "all"
+==
+{% component 'account' %}{% component 'session' %}

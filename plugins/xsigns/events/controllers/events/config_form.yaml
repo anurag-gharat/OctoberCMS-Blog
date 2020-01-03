@@ -1,0 +1,17 @@
+name: Entries
+modelClass: xsigns\events\Models\Events
+form: $/xsigns/events/models/events/fields.yaml
+defaultRedirect: xsigns/events/events
+create:
+    title: 'xsigns.events::lang.form.create'
+    redirect: 'xsigns/events/events/update/:id'
+    redirectClose: xsigns/events/events
+    flashSave: 'xsigns.events::lang.form.saved'
+update:
+    title: 'xsigns.events::lang.form.update'
+    redirect: xsigns/events/events
+    redirectClose: xsigns/events/events
+    flashSave: 'xsigns.events::lang.form.saved'
+    flashDelete: 'xsigns.events::lang.form.deleted'
+preview:
+    title: 'xsigns.events::lang.form.preview'

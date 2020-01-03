@@ -1,0 +1,23 @@
+title = "home"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[events]
+postPage = "/event:slug"
+labels[noentrys] = "Events"
+labels[titel] = "<h2>Events</h2>"
+labels[datum] = "<h6>[d] </h6>"
+labels[zeit] = ""
+labels[detail] = "/event"
+==
+<div class="jumbotron">
+    <div class="container">
+        <div class="col-md-6">
+            {% content "welcome.htm" %}
+        </div>
+    </div>
+</div>
+<div class="container">
+{% component 'events' %}
+</div>

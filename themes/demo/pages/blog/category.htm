@@ -1,0 +1,34 @@
+title = "Blog Category"
+url = "/blog/category/:slug/:page?"
+layout = "default"
+description = "All the Blog Posts of selected category will be showcased."
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/category"
+==
+<?php
+function onend(){
+    $this->page->title=$this['category']->name;
+    }
+?>
+==
+<div class="row">
+   <div class="col-md-8">
+        {% component 'blogPosts' %}
+   </div>
+   <div class="col-md-4">
+        {% component 'blogCategories' %}
+   </div> 
+</div>

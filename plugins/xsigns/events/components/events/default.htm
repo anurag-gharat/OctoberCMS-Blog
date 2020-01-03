@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="page-header">
+        {{labels.titel|raw}}
+    </div>
+    {% for entry in events %}
+    <p class="lead"><strong>{{ entry.title }}</strong> {{ entry.date|raw }}&nbsp;</p>
+        <p class="event_time">{{ entry.time|raw }}</p>
+        <p class="event_city">{{ entry.city}}</p>
+        <p>{{ entry.short|raw }}</p>
+        <a href="{{entry.url}}">{{ labels.detail }}</a>
+        {% if not loop.last %}<hr />{% endif %}
+    {% else %}
+        {{ labels.noentry|raw}}
+    {% endfor %}
+</div>
+<br>
+<br>
+
+<div class="wrapper">
+    <div class="col-md-6">
+        <div class="card-color">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            UPCOMING EVENTS
+                        </th>
+                    </tr>
+                </thead>
+                    {% for entry in events %}
+                    <tr>
+                        <td>
+                            {{ entry.date|raw }}
+                        </td>
+                        <td>
+                            <h5>{{ entry.title }}</h5>
+                            <p class="text-muted">{{ entry.short|raw }}</p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="2">
+                            <a href="#">VIEW ALL EVENTS</a> 
+                        </td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+    
+
+</div>
+<!--
+Placeholder :
+    date  = date string
+    title = event title
+    city = city
+    text = long text,
+    short = short text,
+    time = time string
+    url = url to detail page
+    labels.title = header title
+    labels.detail = text for detail link
+    labels.noentry = no events found
+-->

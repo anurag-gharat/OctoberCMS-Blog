@@ -1,0 +1,37 @@
+columns:
+    id:
+        label: 'xsigns.events::lang.list.id'
+        type: number
+        searchable: true
+        sortable: true
+        width: 60px
+    title:
+        label: 'xsigns.events::lang.list.title'
+        type: text
+        searchable: true
+        sortable: true
+    from:
+        label: 'xsigns.events::lang.list.fromdate'
+        type: date
+        searchable: true
+        sortable: true
+    to:
+        label: 'xsigns.events::lang.list.todate'
+        type: date
+        searchable: true
+        sortable: true
+    timefrom:
+        label: 'xsigns.events::lang.list.time'
+        type: time
+        searchable: true
+        sortable: true
+    city:
+        label: 'xsigns.events::lang.list.city'
+        type: text
+        searchable: true
+        sortable: true
+    public:
+        label: 'xsigns.events::lang.list.public'
+        type: partial
+        path: $/xsigns/events/models/events/yesno.htm
+        width: 60px

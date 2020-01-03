@@ -1,0 +1,76 @@
+<?php return [
+    'plugin' => [
+        'name' => 'Eventmanager',
+        'description' => 'Einfacher Eventmanager für die Web-Seite'
+    ],
+    'form' => [
+        'title' => 'Bezeichnung',
+        'title_desc' => 'Kurze Bezeichnung des Events.',
+        'title_placeholder' => 'neues Event',
+        'text' => 'Beschreibung',
+        'text_description' => 'Beschreibung des Events als Lang-Text.',
+        'text_placeholder' => 'Beschreibung des Events',
+        'short' => 'Kurztext',
+        'short_description' => 'Kurztext des Events für Listenansicht.',
+        'short_placeholder' => 'Kurztext des Events',
+
+        'public' => 'Aktiv',
+        'public_desc' => 'Event für alle anzeigen.',
+        'fromdate' => 'Beginn',
+        'todate' => 'Ende',
+        'timefrom' => 'Startzeit',
+        'timeto' => 'Endzeit',
+        'create' => 'neues Event',
+        'update' => 'Update Event',
+        'saved' => 'Event gespeichert',
+        'deleted' => 'Event gelöscht',
+        'preview' => 'Event Vorschau',
+        'city' => 'Ort',
+        'city_desc' => 'Ort des Events / der Veranstaltung',
+        'alias' => 'Event Alias aus dem Titel (nach dem speichern)',
+        'alias_desc' => 'Der Alias wird automatisch generiert um eine Suchmaschinen optimierte url zu erzeugen'
+    ],
+    'list' => [
+        'id' => 'ID',
+        'title' => 'Bezeichnung',
+        'fromdate' => 'Beginn',
+        'todate' => 'Ende',
+        'time' => 'Zeit',
+        'public' => 'Aktiv',
+        'yes' => 'Ja',
+        'no' => 'Nein',
+        'city' => 'Ort'
+    ],
+    'menu' => [
+        'main' => 'Eventmanager',
+        'side_entries' => 'Events',
+    ],
+    'event' =>[
+        'name' => 'Event-Detail',
+        'description' => 'Stellt ein Event dar',
+        'labels' => 'Beschriftungen',
+        'ptitle' => 'Titel/Überschrift',
+        'pdescription' => 'HTML-Tags erlaubt',
+        'pdatum' => 'Datumsanzeige',
+        'pdatumdesc' => 'Platzhalter [d] = Start, [dd] = Ende, [z] = Startzeit [zz]= Endzeit',
+        'ptime' => 'Zeit',
+        'ptimedesc' =>'HTML-Tags erlaubt. Platzhalter [z] = Startzeit [zz]= Endzeit',
+    ],
+    'events' => [
+        'name' => 'Eventliste',
+        'description' => 'Stellt eine Event-Liste dar',
+        'detailpage' => 'Zielseite/Detailseite',
+        'detailpagedesc' => 'Zielseite eines Events mit Angabe eines alias (z.B. event/:alias)',
+        'labels' => 'Beschriftungen',
+        'noentry' => 'Hinweis keine Events.',
+        'noentrydesc' => 'Hinweistext , wenn keine Events vorhanden. HTML-Tags erlaubt',
+        'ptitle' => 'Titel/Überschrift',
+        'pdescription' => 'HTML-Tags erlaubt',
+        'pdatum' => 'Datumsanzeige',
+        'pdatumdesc' => 'Platzhalter [d] = Start, [dd] = Ende, [z] = Startzeit [zz]= Endzeit',
+        'ptime' => 'Zeit',
+        'ptimedesc' =>'HTML-Tags erlaubt. Platzhalter [z] = Startzeit [zz]= Endzeit',
+        'detail' => 'Link-Text',
+        'detaildesc' => ' Text für den linkt zur Detailseite'
+    ]
+];

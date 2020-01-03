@@ -1,0 +1,31 @@
+[session]
+security = "all"
+==
+<!-- Nav -->
+<nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand"><img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""></a>
+        </div>
+        <div class="collapse navbar-collapse navbar-main-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="separator hidden-xs"></li>
+                <li class="{% if this.page.id == 'home' %}active{% endif %} navbar-link"><a href="{{ 'home'|page }}">HOME</a></li>
+                <li class="{% if this.page.id == 'blog' %}active{% endif %}"><a{% component 'session' %} href="{{ 'blog'|page }}">BLOG</a></li>
+                <li class="{% if this.page.id == 'forum' %}active{% endif %}"><a href="{{ 'forum'|page }}">FORUM</a></li>
+                <li class="{% if this.page.id == 'account' %}active{% endif %}"><a href="{{ 'account'|page }}">ACCOUNT</a></li>
+                {% if user %}
+                
+                    <li class="{% if this.page.id == 'account' %}active{% endif %}"><a href="#" data-request="onLogout">LOGOUT</a></li>
+                {% endif %}
+                
+            </ul>
+        </div>
+    </div>
+</nav>

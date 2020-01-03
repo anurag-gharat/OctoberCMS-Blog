@@ -1,0 +1,64 @@
+fields:
+    title:
+        label: 'xsigns.events::lang.form.title'
+        span: auto
+        placeholder: 'xsigns.events::lang.form.title_placeholder'
+        required: true
+        type: text
+        commentAbove: 'xsigns.events::lang.form.title_desc'
+    city:
+        label: 'xsigns.events::lang.form.city'
+        span: auto
+        type: text
+        commentAbove: 'xsigns.events::lang.form.city_desc'
+    from:
+        label: 'xsigns.events::lang.form.fromdate'
+        mode: date
+        span: auto
+        required: 1
+        type: datepicker
+    to:
+        label: 'xsigns.events::lang.form.todate'
+        mode: date
+        span: auto
+        type: datepicker
+    timefrom:
+        label: 'xsigns.events::lang.form.timefrom'
+        mode: time
+        span: auto
+        type: datepicker
+    timeto:
+        label: 'xsigns.events::lang.form.timeto'
+        mode: time
+        span: auto
+        type: datepicker
+    alias:
+        label: 'xsigns.events::lang.form.alias'
+        size: large
+        span: full
+        type: text
+        attributes:
+            disabled: true
+        commentAbove: 'xsigns.events::lang.form.alias_desc'
+    short:
+        label: 'xsigns.events::lang.form.short'
+        size: large
+        span: full
+        placeholder: 'xsigns.events::lang.form.short_placeholder'
+        required: true
+        type: richeditor
+        commentAbove: 'xsigns.events::lang.form.short_description'
+    text:
+        label: 'xsigns.events::lang.form.text'
+        size: large
+        span: full
+        placeholder: 'xsigns.events::lang.form.text_placeholder'
+        type: richeditor
+        commentAbove: 'xsigns.events::lang.form.text_description'
+    public:
+        label: 'xsigns.events::lang.form.public'
+        span: full
+        default: 1
+        required: 0
+        type: switch
+        comment: 'xsigns.events::lang.form.public_desc'

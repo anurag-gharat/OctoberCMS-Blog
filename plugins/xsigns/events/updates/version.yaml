@@ -1,0 +1,8 @@
+1.0.0:
+    - 'Current version.'
+    - create_events_table.php
+1.0.1:
+    - Update table xsigns_events set timefrom,timeto and text to nullable
+    - update01.php
+1.0.2:
+    - Fixed an error while automatically creating the event alias.

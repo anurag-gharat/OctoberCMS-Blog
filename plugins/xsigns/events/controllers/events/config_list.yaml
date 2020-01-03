@@ -1,0 +1,16 @@
+title: Entries
+modelClass: xsigns\events\Models\Events
+list: $/xsigns/events/models/events/columns.yaml
+recordUrl: 'xsigns/events/events/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: '20'
+showSetup: true
+showCheckboxes: true
+showSorting: 1
+defaultSort:
+    column: id
+    direction: desc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
