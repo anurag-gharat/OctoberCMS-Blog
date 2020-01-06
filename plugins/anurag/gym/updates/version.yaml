@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table anurag_gym_'
+    - builder_table_create_anurag_gym_.php
+1.0.3:
+    - 'Updated table anurag_gym_'
+    - builder_table_update_anurag_gym_.php

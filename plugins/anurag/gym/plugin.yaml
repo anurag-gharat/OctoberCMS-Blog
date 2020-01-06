@@ -1,0 +1,6 @@
+plugin:
+    name: 'anurag.gym::lang.plugin.name'
+    description: 'anurag.gym::lang.plugin.description'
+    author: anurag
+    icon: oc-icon-building
+    homepage: ''
