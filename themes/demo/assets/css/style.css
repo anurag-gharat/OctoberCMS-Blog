@@ -8,6 +8,15 @@ nav{
 nav ul li a{
     color:#15e61f !important;
 }
+.welcome{
+    height: 90vh;
+    width: 100%;
+    margin: 0px;
+}
+.welcome>img{
+    height: 100%;
+    width: 100%;
+}
 .imgholder{
     padding: 10px;
 }

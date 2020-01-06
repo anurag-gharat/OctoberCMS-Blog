@@ -11,17 +11,13 @@ labels[datum] = "<h6>[d] </h6>"
 labels[zeit] = ""
 labels[detail] = "/event"
 ==
-<div class="jumbotron">
-    <div class="container">
-        <div class="col-md-6">
-            {% content "welcome.htm" %}
-        </div>
+
+    <div class="welcome">
+        <img src="{{'assets/images/wallpaper1.jpg'|theme}}" alt="">
     </div>
-</div>
-<div class="container">
-{% component 'events' %}
-</div>
+
 <div class="container-fluid">
+    <div class="row">
     <div class="col-md-6 imgholder">
         <img src="{{'assets/images/gym.jpg'|theme}}" alt="" srcset="">
     </div>
@@ -31,8 +27,12 @@ labels[detail] = "/event"
 
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
         </p>
+        <p>We are available in around 20 cities! Find if your city is in the list.</p>
+        <a href="#">Check Now!</a>
         <a href="#"><p>Couldnt find us? Click on this link to open Googlemap location.<i class="fa fa-map-marker" aria-hidden="true"></i></p></a>
+    
     </div>
+</div>
 </div>
 
 
