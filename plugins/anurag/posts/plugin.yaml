@@ -1,0 +1,11 @@
+plugin:
+    name: 'anurag.posts::lang.plugin.name'
+    description: 'anurag.posts::lang.plugin.description'
+    author: anurag
+    icon: oc-icon-file-text
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Posts
+        url: anurag/posts/post
+        icon: icon-file-text-o

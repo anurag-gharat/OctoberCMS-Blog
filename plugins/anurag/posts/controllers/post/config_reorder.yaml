@@ -1,0 +1,4 @@
+title: Post
+modelClass: Anurag\Posts\Models\Post
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,10 @@
+name: Update
+form: $/anurag/updates/models/update/fields.yaml
+modelClass: Anurag\Updates\Models\Update
+defaultRedirect: anurag/updates/update
+create:
+    redirect: 'anurag/updates/update/update/:id'
+    redirectClose: anurag/updates/update
+update:
+    redirect: anurag/updates/update
+    redirectClose: anurag/updates/update

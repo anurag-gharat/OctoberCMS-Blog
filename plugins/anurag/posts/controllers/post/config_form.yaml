@@ -1,0 +1,10 @@
+name: Post
+form: $/anurag/posts/models/post/fields.yaml
+modelClass: Anurag\Posts\Models\Post
+defaultRedirect: anurag/posts/post
+create:
+    redirect: 'anurag/posts/post/update/:id'
+    redirectClose: anurag/posts/post
+update:
+    redirect: anurag/posts/post
+    redirectClose: anurag/posts/post

@@ -1,0 +1,13 @@
+title = "update"
+url = "/update/:id"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Anurag\Updates\Models\Update"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "description"
+notFoundMessage = "Record not found"
+==
+{% component 'builderDetails' %}

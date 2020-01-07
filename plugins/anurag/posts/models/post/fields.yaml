@@ -1,0 +1,18 @@
+fields:
+    title:
+        label: 'titile of post'
+        span: full
+        placeholder: ''
+        type: text
+    description:
+        label: Description
+        size: ''
+        span: full
+        type: richeditor
+    Image:
+        label: Image
+        span: auto
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        type: mediafinder

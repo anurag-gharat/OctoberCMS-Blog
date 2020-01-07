@@ -1,0 +1,11 @@
+plugin:
+    name: 'anurag.updates::lang.plugin.name'
+    description: 'anurag.updates::lang.plugin.description'
+    author: anurag
+    icon: oc-icon-newspaper-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Updates
+        url: anurag/updates/update
+        icon: icon-newspaper-o

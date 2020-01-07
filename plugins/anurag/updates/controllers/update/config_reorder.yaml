@@ -1,0 +1,4 @@
+title: Update
+modelClass: Anurag\Updates\Models\Update
+toolbar:
+    buttons: reorder_toolbar
