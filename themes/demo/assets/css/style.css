@@ -1,9 +1,6 @@
-/* .active{
-    color: #15e61f !important;
-} */
-nav{
-    background-color: white !important;
-    border-bottom: none !important;
+
+.navbar{
+    border-bottom: none;    
 }
 nav ul li a{
     color:#15e61f !important;
@@ -11,7 +8,7 @@ nav ul li a{
 .welcome{
     height: 90vh;
     width: 100%;
-    margin: 0px;
+    margin: 0px; 
 }
 .welcome>img{
     height: 100%;
@@ -33,6 +30,9 @@ nav ul li a{
     font-style: italic;
     font-weight: bold;
     color: #15e61f;    
+}
+.margin-top{
+    margin-top: 50px;
 }
 .margin-top{
     margin-top: 50px;
