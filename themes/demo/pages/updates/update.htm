@@ -10,4 +10,14 @@ modelKeyColumn = "id"
 displayColumn = "description"
 notFoundMessage = "Record not found"
 ==
-{% component 'builderDetails' %}
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+    {{ attribute(record, displayColumn)|raw }}
+    <h1>{{ record.title }}</h1>
+    <img src="{{ record.image.path }}">
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}

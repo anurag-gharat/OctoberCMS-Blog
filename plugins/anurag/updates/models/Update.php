@@ -26,4 +26,7 @@ class Update extends Model
      */
     public $rules = [
     ];
+    public $attachOne =[
+        'image'=>'System\Models\File'
+    ];
 }

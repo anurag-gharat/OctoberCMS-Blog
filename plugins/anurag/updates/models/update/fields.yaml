@@ -8,3 +8,10 @@ fields:
         span: full
         size: ''
         type: richeditor
+    image:
+        label: image
+        span: auto
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        type: mediafinder
