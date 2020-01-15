@@ -1,6 +1,9 @@
-
+body{
+    background-color: #ecf0f1;
+}
 .navbar{
-    border-bottom: none;    
+    border-bottom: none;   
+    background-color: #fff; 
 }
 nav ul li a{
     color:#15e61f !important;
