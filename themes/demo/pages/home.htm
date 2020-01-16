@@ -3,14 +3,6 @@ url = "/"
 layout = "default"
 is_hidden = 0
 
-[events]
-postPage = "/event:slug"
-labels[noentrys] = "Events"
-labels[titel] = "<h2>Events</h2>"
-labels[datum] = "<h6>[d] </h6>"
-labels[zeit] = ""
-labels[detail] = "/event"
-
 [builderList]
 modelClass = "Anurag\Updates\Models\Update"
 scope = "-"
@@ -21,8 +13,17 @@ detailsPage = "updates/update"
 detailsKeyColumn = "id"
 detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "posts"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
 ==
-<div class="welcome" style="margin-top: 50px;">
+<div class="welcome" style="margin-top: 20px;">
         <img src="{{'assets/images/wallpaper1.jpg'|theme}}" alt="">
     </div>
 <div>{% set records = builderList.records %}
@@ -89,6 +90,66 @@ pageNumber = "{{ :page }}"
     
     </div>
 </div>
+</div>
+<div class="container">
+ {% set posts = blogPosts.posts %}
+
+<ul class="post-list list-group">
+    {% for post in posts %}
+    <div class="card">
+        <li>
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            
+{% if post.featured_images.count %}
+<div class="featured-images text-center">
+    {% for image in post.featured_images %}
+        <p>
+            <img
+                data-src="{{ image.filename }}"
+                src="{{ image.path }}"
+                alt="{{ image.description }}"
+                style="max-width: 100%" />
+        </p>
+    {% endfor %}
+</div>
+{% endif %}
+
+            <p class="info">
+                Posted
+                {% if post.categories.count %} in {% endif %}
+                {% for category in post.categories %}
+                    <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+                on {{ post.published_at|date('M d, Y') }}
+            </p>
+
+            <p class="excerpt">{{ post.summary|raw }}</p>
+
+        </li>
+    </div>
+    {% else %}
+        <li class="no-data">{{ blogPosts.noPostsMessage }}</li>
+    {% endfor %}
+</ul>
+
+{% if posts.lastPage > 1 %}
+    <ul class="pagination">
+        {% if posts.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..posts.lastPage %}
+            <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}
+
 </div>
 
 
