@@ -14,65 +14,14 @@ detailsKeyColumn = "id"
 detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
 
-[blogPosts]
-pageNumber = "{{ :page }}"
-categoryFilter = "posts"
-postsPerPage = 10
-noPostsMessage = "No posts found"
-sortOrder = "published_at desc"
-categoryPage = "blog/category"
-postPage = "blog/post"
+[forumChannels]
+memberPage = "forum"
+channelPage = "forum/channel"
+topicPage = "forum/topic"
 ==
 <div class="welcome" style="margin-top: 20px;">
         <img src="{{'assets/images/wallpaper1.jpg'|theme}}" alt="">
     </div>
-<div>{% set records = builderList.records %}
-{% set displayColumn = builderList.displayColumn %}
-{% set noRecordsMessage = builderList.noRecordsMessage %}
-{% set detailsPage = builderList.detailsPage %}
-{% set detailsKeyColumn = builderList.detailsKeyColumn %}
-{% set detailsUrlParameter = builderList.detailsUrlParameter %}
-
-<ul class="record-list">
-    {% for record in records %}
-        <li>
-            {# Use spaceless tag to remove spaces inside the A tag. #}
-            {% spaceless %}
-                {% if detailsPage %}
-                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
-                    
-                {% endif %}
-
-                {{ attribute(record, displayColumn) }}
-                {{record.description}}
-
-                {% if detailsPage %}
-                    </a>
-                {% endif %}
-            {% endspaceless %}
-        </li>
-    {% else %}
-        <li class="no-data">{{ noRecordsMessage }}</li>
-    {% endfor %}
-</ul>
-
-{% if records.lastPage > 1 %}
-    <ul class="pagination">
-        {% if records.currentPage > 1 %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
-        {% endif %}
-
-        {% for page in 1..records.lastPage %}
-            <li class="{{ records.currentPage == page ? 'active' : null }}">
-                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
-            </li>
-        {% endfor %}
-
-        {% if records.lastPage > records.currentPage %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
-        {% endif %}
-    </ul>
-{% endif %}</div>
 <div class="container-fluid">
     <div class="row">
     <div class="col-md-6 imgholder">
@@ -92,27 +41,13 @@ postPage = "blog/post"
 </div>
 </div>
 <div class="container">
- {% set posts = blogPosts.posts %}
+{% set posts = blogPosts.posts %}
 
 <ul class="post-list list-group">
     {% for post in posts %}
     <div class="card">
         <li>
             <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            
-{% if post.featured_images.count %}
-<div class="featured-images text-center">
-    {% for image in post.featured_images %}
-        <p>
-            <img
-                data-src="{{ image.filename }}"
-                src="{{ image.path }}"
-                alt="{{ image.description }}"
-                style="max-width: 100%" />
-        </p>
-    {% endfor %}
-</div>
-{% endif %}
 
             <p class="info">
                 Posted
@@ -124,7 +59,7 @@ postPage = "blog/post"
             </p>
 
             <p class="excerpt">{{ post.summary|raw }}</p>
-
+            
         </li>
     </div>
     {% else %}
@@ -149,9 +84,85 @@ postPage = "blog/post"
         {% endif %}
     </ul>
 {% endif %}
+</div>
+<div class="container">
+ <div class="rainlab-forum">
 
+    <table class="forum-table">
+        {% for channel in channels %}
+
+            <tr class="root-channel">
+                <th colspan="2">
+                    {{ channel.title }}
+                </th>
+                <th class="counter-column">Topics</th>
+                <th class="counter-column">Posts</th>
+                <th class="activity-column">Recent topic</th>
+            </tr>
+
+            {% if channel.relations.children %}
+
+                {% for channel in channel.children %}
+
+                    <tr class="forum-channel">
+                        <td class="indicator-column">
+                            <div class="topic-indicator {{ channel.hasNew ? 'has-new' }}"></div>
+                        </td>
+                        <td>
+                            <h5>
+                                <a href="{{ channel.url }}">
+                                    {{ channel.title }}
+                                </a>
+                            </h5>
+                            <p>{{ channel.description }}</p>
+
+                            {% if channel.children|length %}
+                                <div class="forum-subchannel">
+                                    <ul>
+                                        <li><span>Subforum</span></li>
+                                        {% for channel in channel.children %}
+                                            <li>
+                                                <a href="{{ channel.url }}" title="{{ channel.description }}">
+                                                    {{ channel.title }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </td>
+                        <td class="counter-column">
+                            <p>{{ channel.count_topics }}</p>
+                        </td>
+                        <td class="counter-column">
+                            <p>{{ channel.count_posts }}</p>
+                        </td>
+                        <td class="activity-column">
+                            {% if channel.first_topic %}
+                                <p>
+                                    <a href="{{ channel.first_topic.url }}?page=last#post-{{ channel.first_topic.last_post_id }}">
+                                        {{ channel.first_topic.subject }}
+                                    </a>
+                                    <small>
+                                        {% partial forumChannels ~ "::timestamp" date=channel.first_topic.last_post_at %}
+                                    </small>
+                                </p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            {% else %}
+                <tr>
+                    <td colspan="100"><p>There are no channels to show.</p></td>
+                </tr>
+            {% endif %}
+
+        {% endfor %}
+    </table>
 </div>
 
+</div>
 
 
 <!-- news letter -->
